@@ -1,5 +1,13 @@
 ### Hi there 👋
 
+I'm Chief of Product Development at exo in the Intelligent Transport Systems space. 
+
+I dabble in development, mostly on the following stack:
+- MongoDB
+- Express
+- EmberJS
+- NodeJS
+
 <!--
 **francispeixoto/francispeixoto** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
