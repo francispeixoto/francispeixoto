@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-I'm Chief of Product Development at exo in the Intelligent Transport Systems space. 
+I'm Director of Software Development at exo. 
 
 I dabble in development, mostly on the following stack:
 - MongoDB
