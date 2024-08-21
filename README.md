@@ -2,7 +2,7 @@
 
 I'm Director of Software Development at exo, a public transit agency in Montreal.
 
-My team's wotk mostly revolves around:
+My team's work mostly revolves around:
 - web development (react, angular, .net core)
 - vehicular IoT
 - IaC
