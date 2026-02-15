@@ -1,0 +1,33 @@
+{
+  "header": {
+    "name": "Francis Peixoto",
+    "title": "Director of Software Development",
+    "tagline": "exo - Montreal Public Transit Agency"
+  },
+  "about": {
+    "title": "About",
+    "description": "Leading software development initiatives at exo, focusing on web development, vehicular IoT, and Infrastructure as Code."
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "common": {
+    "print": "Print Resume",
+    "language": "Language",
+    "editMode": "Edit Mode",
+    "viewMode": "View Mode",
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "delete": "Delete",
+    "edit": "Edit",
+    "visible": "Visible",
+    "hidden": "Hidden"
+  }
+}

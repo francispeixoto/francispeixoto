@@ -1,0 +1,33 @@
+{
+  "header": {
+    "name": "Francis Peixoto",
+    "title": "Directeur du développement logiciel",
+    "tagline": "exo - Agence de transport collectif de Montréal"
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Diriger les initiatives de développement logiciel chez exo, en mettant l'accent sur le développement web, l'IoT véhiculaire et l'Infrastructure as Code."
+  },
+  "experience": {
+    "title": "Expérience"
+  },
+  "education": {
+    "title": "Formation"
+  },
+  "skills": {
+    "title": "Compétences"
+  },
+  "common": {
+    "print": "Imprimer le CV",
+    "language": "Langue",
+    "editMode": "Mode édition",
+    "viewMode": "Mode visualisation",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "add": "Ajouter",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "visible": "Visible",
+    "hidden": "Caché"
+  }
+}

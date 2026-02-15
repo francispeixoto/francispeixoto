@@ -1,59 +1,205 @@
-# ProfileWebsite
+# Profile Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+A modern, resume-style profile website built with Angular 21, featuring automated translation, print-to-PDF functionality, and a built-in CMS for content management.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Modern Tech Stack**: Angular 21, Tailwind CSS, TypeScript
+- **Automated Translation**: French (default) and English support using Transloco
+- **Print to PDF**: Generate a formatted resume PDF optimized for ATS scanning
+- **Built-in CMS**: Manage content directly in the browser using localStorage
+- **Section Management**: Toggle visibility and customize sections
+- **Component Library**: Storybook integration for component development
+- **Testing**: Jest for unit tests, Playwright for E2E testing
+- **Code Quality**: SonarQube integration for quality and security monitoring
+- **Cloud Deployment**: Configured for Cloudflare Pages
 
-```bash
-ng serve
-```
+## Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Framework**: Angular 21 with standalone components
+- **Styling**: Tailwind CSS
+- **Translation**: @jsverse/transloco
+- **PDF Generation**: html2pdf.js
+- **Testing**:
+  - Unit: Jest + jest-preset-angular
+  - E2E: Playwright
+- **Component Development**: Storybook 10
+- **Code Quality**: SonarQube Scanner
+- **Deployment**: Cloudflare Pages
 
-## Code scaffolding
+## Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites
 
-```bash
-ng generate component component-name
-```
+- Node.js 20.x or higher
+- npm 11.x or higher
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Installation
 
 ```bash
-ng test
+cd profile-website
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Development
 
 ```bash
-ng e2e
+# Start development server
+npm start
+
+# Open http://localhost:4200
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Testing
 
-## Additional Resources
+```bash
+# Run unit tests
+npm test
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Run unit tests with coverage
+npm run test:coverage
+
+# Run E2E tests
+npm run test:e2e
+
+# Run E2E tests with UI
+npm run test:e2e:ui
+```
+
+### Storybook
+
+```bash
+# Start Storybook
+npm run storybook
+
+# Build Storybook
+npm run build-storybook
+```
+
+### Building
+
+```bash
+# Development build
+npm run build
+
+# Production build
+npm run build:prod
+```
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── cms/                    # CMS models and services
+│   │   ├── models/
+│   │   │   └── profile.model.ts
+│   │   └── services/
+│   │       └── cms.service.ts
+│   ├── core/                   # Core services
+│   │   └── services/
+│   │       └── print.service.ts
+│   ├── features/               # Feature components
+│   │   ├── profile.component.ts
+│   │   ├── profile.component.html
+│   │   └── profile.component.css
+│   ├── app.ts                  # Root component
+│   ├── app.config.ts           # App configuration
+│   └── app.routes.ts           # Route configuration
+├── assets/
+│   └── i18n/                   # Translation files
+│       ├── en.json
+│       └── fr.json
+└── styles.css                  # Global styles
+
+```
+
+## Content Management
+
+The website includes a lightweight CMS that stores content in the browser's localStorage. This allows you to:
+
+- Update profile information
+- Add/remove/reorder sections
+- Toggle section visibility
+- Add custom sections
+- Export/import data as JSON
+
+All content is managed client-side, so there's no backend dependency.
+
+## Translation
+
+The site supports French (default) and English. Toggle between languages using the language switcher in the header.
+
+Translation files are located in `src/assets/i18n/`:
+- `fr.json` - French translations
+- `en.json` - English translations
+
+## Print Functionality
+
+Click the "Print Resume" button to generate a PDF version of your profile. The PDF is:
+- Optimized for A4 paper size
+- Formatted for ATS (Applicant Tracking System) compatibility
+- Includes proper page breaks to avoid splitting sections
+- Excludes UI elements (buttons, controls) from the output
+
+## Deployment
+
+### Cloudflare Pages
+
+The project is configured for Cloudflare Pages deployment:
+
+1. Build command: `npm run build:prod`
+2. Build output directory: `dist/profile-website/browser`
+3. Node version: 20 (specified in `.nvmrc`)
+
+Configuration files:
+- `wrangler.toml` - Cloudflare Pages configuration
+- `public/_redirects` - SPA routing support
+- `.nvmrc` - Node version specification
+
+## Code Quality
+
+### SonarQube
+
+Run SonarQube analysis:
+
+```bash
+npm run sonar
+```
+
+Configuration is in `sonar-project.properties`.
+
+### Test Coverage
+
+Generate coverage reports:
+
+```bash
+npm run test:coverage
+```
+
+Coverage reports are generated in the `coverage/` directory.
+
+## Development Workflow
+
+1. **Make changes** to components or services
+2. **Run tests** to ensure nothing breaks
+3. **Build** the project to verify production build
+4. **Deploy** to Cloudflare Pages
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+Private project - All rights reserved
+
+## Notes
+
+- The CMS is development-only in terms of UI, but the data persists in localStorage
+- Production builds exclude development tools but include the CMS service for content rendering
+- Translation files are included in the production bundle
+- PDF generation works entirely client-side with no server dependency
