@@ -1,14 +1,14 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
-import { provideTransloco, TranslocoHttpLoader } from '@jsverse/transloco';
+import { provideTransloco, TranslocoLoader } from '@jsverse/transloco';
 import { inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 
 // Transloco HTTP Loader
-export class CustomTranslocoHttpLoader implements TranslocoHttpLoader {
+export class CustomTranslocoHttpLoader implements TranslocoLoader {
   private http = inject(HttpClient);
 
   getTranslation(lang: string) {

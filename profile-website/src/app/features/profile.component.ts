@@ -1,9 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
-import { CmsService } from '../../cms/services/cms.service';
-import { PrintService } from '../../core/services/print.service';
-import { ProfileData } from '../../cms/models/profile.model';
+import { CmsService } from '../cms/services/cms.service';
+import { PrintService } from '../core/services/print.service';
+import { ProfileData, ProfileSection } from '../cms/models/profile.model';
 
 @Component({
   selector: 'app-profile',
@@ -13,14 +13,14 @@ import { ProfileData } from '../../cms/models/profile.model';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  private cmsService = inject(CmsService);
-  private printService = inject(PrintService);
-  private translocoService = inject(TranslocoService);
+  private readonly cmsService: CmsService = inject(CmsService);
+  private readonly printService: PrintService = inject(PrintService);
+  public readonly translocoService: TranslocoService = inject(TranslocoService);
 
   profileData!: ProfileData;
 
   ngOnInit(): void {
-    this.cmsService.profileData$.subscribe(data => {
+    this.cmsService.profileData$.subscribe((data: ProfileData) => {
       this.profileData = data;
       this.translocoService.setActiveLang(data.language);
     });
@@ -41,7 +41,8 @@ export class ProfileComponent implements OnInit {
     this.cmsService.updateProfile(profile);
   }
 
-  get visibleSections() {
-    return this.profileData?.sections?.filter(s => s.visible).sort((a, b) => a.order - b.order) || [];
+  get visibleSections(): ProfileSection[] {
+    return this.profileData?.sections?.filter((s: ProfileSection) => s.visible).sort((a: ProfileSection, b: ProfileSection) => a.order - b.order) || [];
   }
 }
+
