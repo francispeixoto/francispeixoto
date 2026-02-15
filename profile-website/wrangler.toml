@@ -1,0 +1,10 @@
+# Cloudflare Pages Build Configuration
+# This file is optional but provides clarity on build settings
+
+[build]
+  command = "npm run build:prod"
+  publish = "dist/profile-website/browser"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "11.6.2"
